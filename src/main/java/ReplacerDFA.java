@@ -58,7 +58,7 @@ public class ReplacerDFA {
     public void start() {
         state = State.NO_MATCH;
         reinitializeBuffer();
-        this.startMatcher.reset();
+        startMatcher.reset();
     }
 
     public void process(char c) {
@@ -145,6 +145,7 @@ public class ReplacerDFA {
     public void finish() {
         state = State.NO_MATCH;
         flushBuffer();
+        startMatcher.reset();
     }
 
     private void flushBuffer() {
